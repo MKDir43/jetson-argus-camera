@@ -6,10 +6,6 @@
 		"--net=host",
 		"--volume=/tmp/.X11-unix/:/tmp/.X11-unix"
 	],
-	"overrideCommand": false,
-	"remoteEnv": {
-		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
-	},
 	"containerEnv": {
 		"DISPLAY": "${localEnv:DISPLAY}"
 	},
@@ -19,5 +15,5 @@
 	"extensions": [
 		"ms-azuretools.vscode-docker"
 	],
-	"remoteUser": "nvidia"
+	"remoteUser": "vscode"
 }
