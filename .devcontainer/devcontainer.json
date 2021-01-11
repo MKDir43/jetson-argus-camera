@@ -4,16 +4,25 @@
 	"runArgs": [
 		"--gpus=all",
 		"--net=host",
+		"--privileged",
 		"--volume=/tmp/.X11-unix/:/tmp/.X11-unix"
 	],
+	"containerUser": "vscode",
+	"terminal.integrated.shell.linux": "/bin/bash",
 	"containerEnv": {
 		"DISPLAY": "${localEnv:DISPLAY}"
 	},
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash"
-	},
 	"extensions": [
-		"ms-azuretools.vscode-docker"
-	],
-	"remoteUser": "vscode"
+		"dotjoshjohnson.xml",
+		"laurenttreguier.uncrustify",
+		"ms-azuretools.vscode-docker",
+		"ms-iot.vscode-ros",
+		"ms-python.python",
+		"ms-vscode.cpptools",
+		"redhat.vscode-yaml",
+		"smilerobotics.urdf",
+		"streetsidesoftware.code-spell-checker",
+		"twxs.cmake",
+		"yzhang.markdown-all-in-one"
+	]
 }
