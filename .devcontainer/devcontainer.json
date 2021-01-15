@@ -2,29 +2,21 @@
 	"name": "nvjetson-camera",
 	"dockerFile": "Dockerfile",
 	"runArgs": [
-		"--gpus=all",
 		"--net=host",
-		"--env=NVIDIA_VISIBLE_DEVICES=all",
-        "--env=NVIDIA_DRIVER_CAPABILITIES=all",
-		"--privileged",
-		"--volume=/tmp/.X11-unix/:/tmp/.X11-unix"
+		"--gpus=all",
+		"--runtime=nvidia",
+		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+		"--volume=/tmp/.docker.xauth:/tmp/.docker.xauth",
+		"--env=XAUTHORITY=/tmp/.docker.xauth",
+		"--env=QT_X11_NO_MITSHM=1"
+		"--env=DISPLAY=$DISPLAY"
 	],
-	"containerUser": "vscode",
+	"remoteUser": "ubuntu",
 	"terminal.integrated.shell.linux": "/bin/bash",
-	"containerEnv": {
-		"DISPLAY": "${localEnv:DISPLAY}"
-	},
 	"extensions": [
-		"dotjoshjohnson.xml",
-		"laurenttreguier.uncrustify",
-		"ms-azuretools.vscode-docker",
-		"ms-iot.vscode-ros",
-		"ms-python.python",
-		"ms-vscode.cpptools",
-		"redhat.vscode-yaml",
-		"smilerobotics.urdf",
-		"streetsidesoftware.code-spell-checker",
-		"twxs.cmake",
-		"yzhang.markdown-all-in-one"
+			"ms-azuretools.vscode-docker",
+			"ms-python.python",
+			"ms-vscode.cpptools",
+			"twxs.cmake"
 	]
 }
